@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIT Commands</title>
+</head>
+
+<body>
+    <div style="font-family: monospace; text-align: center;" id="result"></div>
+</body>
+
+<script>
+    const result = document.getElementById("result");
+
+    var arr = [
+        'creat new folder',
+        '# Add user name and email',
+        '# Confirm if the name and email are saved',
+        '# Get all commands in git',
+        '# Clear all commands',
+        '# Create a new repository',
+        '# for view all thing in this folder',
+        '# Show hidden git files',
+        '# Enter a folder',
+        '# Check repository status',
+        '# Add a file',
+        '# Add file to stage',
+        '# View commit history',
+        '# Remove a commit',
+        '# View branches',
+        '# Switch to a branch',
+        '# Create a new branch',
+        '# Merge branches',
+        '# Check remote connection',
+        '# Connect to GitHub',
+        '# Disconnect from GitHub',
+        '# Upload files to GitHub',
+        '# Download from remote to local'
+    ];
+
+    var cods = [
+        ['mkdir'],
+        ['git config --global user.name "Ammar"', 'git config --global user.email "Ammar@gmail.com"'],
+        ['git config user.name', 'git config user.email','git config --list'],
+        ['git --help'],
+        ['clear'],
+        ['git init "my project"'],
+        ['ls'],
+        ['ls -a'],
+        ['cd file name here'],
+        ['git status'],
+        ['touch index.html'],
+        ['git add index.html style.css'],
+        ['git log'],
+        ['git checkout (code of commit)'],
+        ['git branch'],
+        ['git checkout master'],
+        ['git branch Ammar'],
+        ['git merge master'],
+        ['git remote -v'],
+        ['git remote add origin https://github.com/ammar7-o/test.git'],
+        ['git remote rm origine'],
+        ['git push -u origin master'],
+        [' git pull origin master']
+      
+        // Add more corresponding commands here...
+    ];
+
+    // Loop through both arrays
+    for (let i = 0; i < arr.length; i++) {
+        result.innerHTML += `<h1 style="color: red;">${arr[i]}</h1>`;
+
+        // Only add commands if available in cods array
+        if (cods[i]) {
+            for (let j = 0; j < cods[i].length; j++) {
+                result.innerHTML += `<h2>${cods[i][j]}</h2>`;
+            }
+        }
+    }
+   
+</script>
+
+</html>
